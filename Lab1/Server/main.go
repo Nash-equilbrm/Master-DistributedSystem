@@ -12,11 +12,13 @@ import (
 	"net/rpc"
 	"sort"
 	"strconv"
+	"sync"
 	"time"
 )
 
 type Service struct {
-	db *fastdb.DB
+	db    *fastdb.DB
+	mutex *sync.Mutex
 }
 
 func NewService() (*Service, error) {
@@ -47,7 +49,10 @@ func NewService() (*Service, error) {
 	log.Printf("read %d records in %s", total, time.Since(start))
 
 	sortByUUID(dbRecords)
-	return &Service{db: db}, nil
+	return &Service{
+		db:    db,
+		mutex: new(sync.Mutex),
+	}, nil
 }
 
 // Scheme
@@ -107,22 +112,26 @@ func (s *Service) Get(req *GetRequest, reply *GetReply) error {
 }
 
 func (s *Service) Set(req *SetRequest, reply *SetReply) error {
+	s.mutex.Lock()
 	err := s.db.Set(req.Bucket, req.Key, req.Data)
 	if err != nil {
 		reply.Success = false
 		return err
 	}
 	reply.Success = true
+	s.mutex.Unlock()
 	return nil
 }
 
 func (s *Service) Delete(req *DeleteRequest, reply *DeleteReply) error {
+	s.mutex.Lock()
 	_, err := s.db.Del(req.Bucket, req.Key)
 	if err != nil {
 		reply.Success = false
 		return err
 	}
 	reply.Success = true
+	s.mutex.Unlock()
 	return nil
 }
 
