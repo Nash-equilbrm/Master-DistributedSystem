@@ -27,13 +27,6 @@ func NewService() (*Service, error) {
 		log.Fatal(err)
 	}
 
-	//defer func() {
-	//	Err = db.Close()
-	//	if Err != nil {
-	//		log.Fatal(Err)
-	//	}
-	//}()
-
 	total := 10 // nr of records to work with
 
 	start := time.Now()
