@@ -1,0 +1,2728 @@
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <title>TestElectionBasic -- PASS</title>
+  </head>
+  <style>
+  table {
+    font-family: "Courier New";
+    border-collapse: collapse;
+  }
+
+  table, th, td {
+    padding: 8px;
+    border: 1px solid #cccccc;
+  }
+
+  td.testcell {
+    background-color: #ffffff;
+  }
+
+  td.Follower {
+    background-color: #ffffff;
+  }
+
+  td.Candidate {
+    background-color: #e2e2a3;
+  }
+
+  td.Leader {
+    background-color: #e6fff5;
+  }
+
+  td.Dead {
+    background-color: #dddddd;
+  }
+
+  h1 {
+    text-align: center;
+  }
+  </style>
+<body>
+  <h1>TestElectionBasic -- PASS</h1>
+  <p></p>
+  <table>
+    <tr>
+      
+      <th>Time</th>
+      
+      <th>0</th>
+      
+      <th>1</th>
+      
+      <th>2</th>
+      
+    </tr>
+    
+    <tr>
+      <td>02:18:34.721836</td>  <td class="Follower">listening at [::]:65029</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.723014</td>  <td class="Follower"></td>  <td class="Follower">listening at [::]:65030</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.723621</td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">listening at [::]:65031</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.729341</td>  <td class="Follower">election timer started (5ms), term=0</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.729341</td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">election timer started (9ms), term=0</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.729341</td>  <td class="Follower"></td>  <td class="Follower">election timer started (5ms), term=0</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.739930</td>  <td class="Candidate">becomes Candidate (currentTerm=1); log=[]</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.739930</td>  <td class="Candidate"></td>  <td class="Follower"></td>  <td class="Candidate">becomes Candidate (currentTerm=1); log=[]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.739930</td>  <td class="Candidate"></td>  <td class="Candidate">becomes Candidate (currentTerm=1); log=[]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.739930</td>  <td class="Candidate">sending RequestVote to 1: {Term:1 CandidateId:0 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.739930</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">election timer started (8ms), term=1</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.739930</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 0: {Term:1 CandidateId:2 LastLogIndex:0 LastLogTerm:0}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.739930</td>  <td class="Candidate">election timer started (9ms), term=1</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.739930</td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 2: {Term:1 CandidateId:1 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.739930</td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 0: {Term:1 CandidateId:1 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.739930</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 1: {Term:1 CandidateId:2 LastLogIndex:0 LastLogTerm:0}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.740452</td>  <td class="Candidate"></td>  <td class="Candidate">election timer started (8ms), term=1</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.740452</td>  <td class="Candidate">sending RequestVote to 2: {Term:1 CandidateId:0 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.743852</td>  <td class="Candidate">RequestVote: {Term:1 CandidateId:1 LastLogIndex:0 LastLogTerm:0} [currentTerm=1, votedFor=0]</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.743852</td>  <td class="Candidate">... RequestVote reply: &{Term:1 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.743852</td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:1 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.745023</td>  <td class="Candidate">RequestVote: {Term:1 CandidateId:2 LastLogIndex:0 LastLogTerm:0} [currentTerm=1, votedFor=0]</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.745023</td>  <td class="Candidate">... RequestVote reply: &{Term:1 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.745566</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:1 CandidateId:1 LastLogIndex:0 LastLogTerm:0} [currentTerm=1, votedFor=2]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.745566</td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:1 CandidateId:2 LastLogIndex:0 LastLogTerm:0} [currentTerm=1, votedFor=1]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.745566</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:1 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.745566</td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:1 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.745566</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:1 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.745566</td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:1 CandidateId:0 LastLogIndex:0 LastLogTerm:0} [currentTerm=1, votedFor=1]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.745566</td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:1 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.746093</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:1 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.746093</td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:1 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.746640</td>  <td class="Candidate">received RequestVoteReply {Term:1 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.747713</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:1 CandidateId:0 LastLogIndex:0 LastLogTerm:0} [currentTerm=1, votedFor=2]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.747713</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:1 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.747713</td>  <td class="Candidate">received RequestVoteReply {Term:1 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.750163</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">becomes Candidate (currentTerm=2); log=[]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.750163</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">election timer started (6ms), term=2</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.750163</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 0: {Term:2 CandidateId:2 LastLogIndex:0 LastLogTerm:0}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.750163</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 1: {Term:2 CandidateId:2 LastLogIndex:0 LastLogTerm:0}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.750691</td>  <td class="Candidate">becomes Candidate (currentTerm=2); log=[]</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.750691</td>  <td class="Candidate"></td>  <td class="Candidate">becomes Candidate (currentTerm=2); log=[]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.750691</td>  <td class="Candidate">sending RequestVote to 1: {Term:2 CandidateId:0 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.750691</td>  <td class="Candidate">election timer started (6ms), term=2</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.750691</td>  <td class="Candidate">sending RequestVote to 2: {Term:2 CandidateId:0 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.750691</td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 0: {Term:2 CandidateId:1 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.750691</td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 2: {Term:2 CandidateId:1 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.750691</td>  <td class="Candidate"></td>  <td class="Candidate">election timer started (5ms), term=2</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.752294</td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:2 CandidateId:2 LastLogIndex:0 LastLogTerm:0} [currentTerm=2, votedFor=1]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.752294</td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:2 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.752294</td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:2 CandidateId:0 LastLogIndex:0 LastLogTerm:0} [currentTerm=2, votedFor=1]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.752294</td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:2 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.752294</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:2 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.752294</td>  <td class="Candidate">received RequestVoteReply {Term:2 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.753929</td>  <td class="Candidate">RequestVote: {Term:2 CandidateId:2 LastLogIndex:0 LastLogTerm:0} [currentTerm=2, votedFor=0]</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.753929</td>  <td class="Candidate">... RequestVote reply: &{Term:2 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.753929</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:2 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.755469</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:2 CandidateId:0 LastLogIndex:0 LastLogTerm:0} [currentTerm=2, votedFor=2]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.755469</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:2 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.755469</td>  <td class="Candidate">received RequestVoteReply {Term:2 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.756561</td>  <td class="Candidate">RequestVote: {Term:2 CandidateId:1 LastLogIndex:0 LastLogTerm:0} [currentTerm=2, votedFor=0]</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.756561</td>  <td class="Candidate">... RequestVote reply: &{Term:2 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.756561</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:2 CandidateId:1 LastLogIndex:0 LastLogTerm:0} [currentTerm=2, votedFor=2]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.756561</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:2 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.756561</td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:2 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.757079</td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:2 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.760361</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">becomes Candidate (currentTerm=3); log=[]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.760361</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">election timer started (8ms), term=3</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.760361</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 0: {Term:3 CandidateId:2 LastLogIndex:0 LastLogTerm:0}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.760361</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 1: {Term:3 CandidateId:2 LastLogIndex:0 LastLogTerm:0}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.761053</td>  <td class="Candidate"></td>  <td class="Candidate">becomes Candidate (currentTerm=3); log=[]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.761053</td>  <td class="Candidate">becomes Candidate (currentTerm=3); log=[]</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.761053</td>  <td class="Candidate"></td>  <td class="Candidate">election timer started (8ms), term=3</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.761053</td>  <td class="Candidate">sending RequestVote to 1: {Term:3 CandidateId:0 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.761053</td>  <td class="Candidate">sending RequestVote to 2: {Term:3 CandidateId:0 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.761053</td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 2: {Term:3 CandidateId:1 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.761053</td>  <td class="Candidate">election timer started (5ms), term=3</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.761053</td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 0: {Term:3 CandidateId:1 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.762640</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:3 CandidateId:1 LastLogIndex:0 LastLogTerm:0} [currentTerm=3, votedFor=2]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.762640</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:3 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.762640</td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:3 CandidateId:2 LastLogIndex:0 LastLogTerm:0} [currentTerm=3, votedFor=1]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.762640</td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:3 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.762640</td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:3 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.762640</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:3 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.764724</td>  <td class="Candidate">RequestVote: {Term:3 CandidateId:1 LastLogIndex:0 LastLogTerm:0} [currentTerm=3, votedFor=0]</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.764724</td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:3 CandidateId:0 LastLogIndex:0 LastLogTerm:0} [currentTerm=3, votedFor=1]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.764724</td>  <td class="Candidate">... RequestVote reply: &{Term:3 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.764724</td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:3 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.764724</td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:3 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.764724</td>  <td class="Candidate">received RequestVoteReply {Term:3 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.765763</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:3 CandidateId:0 LastLogIndex:0 LastLogTerm:0} [currentTerm=3, votedFor=2]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.765763</td>  <td class="Candidate">RequestVote: {Term:3 CandidateId:2 LastLogIndex:0 LastLogTerm:0} [currentTerm=3, votedFor=0]</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.765763</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:3 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.765763</td>  <td class="Candidate">... RequestVote reply: &{Term:3 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.765763</td>  <td class="Candidate">received RequestVoteReply {Term:3 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.765763</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:3 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.770580</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">becomes Candidate (currentTerm=4); log=[]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.770580</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 1: {Term:4 CandidateId:2 LastLogIndex:0 LastLogTerm:0}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.770580</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">election timer started (6ms), term=4</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.770580</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 0: {Term:4 CandidateId:2 LastLogIndex:0 LastLogTerm:0}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.771092</td>  <td class="Candidate"></td>  <td class="Candidate">becomes Candidate (currentTerm=4); log=[]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.771092</td>  <td class="Candidate">becomes Candidate (currentTerm=4); log=[]</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.771092</td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 2: {Term:4 CandidateId:1 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.771092</td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 0: {Term:4 CandidateId:1 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.771092</td>  <td class="Candidate">election timer started (9ms), term=4</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.771092</td>  <td class="Candidate"></td>  <td class="Candidate">election timer started (7ms), term=4</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.771092</td>  <td class="Candidate">sending RequestVote to 1: {Term:4 CandidateId:0 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.771092</td>  <td class="Candidate">sending RequestVote to 2: {Term:4 CandidateId:0 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.772260</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:4 CandidateId:1 LastLogIndex:0 LastLogTerm:0} [currentTerm=4, votedFor=2]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.772260</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:4 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.772260</td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:4 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.773345</td>  <td class="Candidate">RequestVote: {Term:4 CandidateId:1 LastLogIndex:0 LastLogTerm:0} [currentTerm=4, votedFor=0]</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.773345</td>  <td class="Candidate">... RequestVote reply: &{Term:4 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.773345</td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:4 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.773873</td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:4 CandidateId:0 LastLogIndex:0 LastLogTerm:0} [currentTerm=4, votedFor=1]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.773873</td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:4 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.773873</td>  <td class="Candidate">received RequestVoteReply {Term:4 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.774912</td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:4 CandidateId:2 LastLogIndex:0 LastLogTerm:0} [currentTerm=4, votedFor=1]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.774912</td>  <td class="Candidate">RequestVote: {Term:4 CandidateId:2 LastLogIndex:0 LastLogTerm:0} [currentTerm=4, votedFor=0]</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.774912</td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:4 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.774912</td>  <td class="Candidate">... RequestVote reply: &{Term:4 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.774912</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:4 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.774912</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:4 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.776103</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:4 CandidateId:0 LastLogIndex:0 LastLogTerm:0} [currentTerm=4, votedFor=2]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.776103</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:4 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.776103</td>  <td class="Candidate">received RequestVoteReply {Term:4 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.780967</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">becomes Candidate (currentTerm=5); log=[]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.780967</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">election timer started (5ms), term=5</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.780967</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 0: {Term:5 CandidateId:2 LastLogIndex:0 LastLogTerm:0}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.780967</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 1: {Term:5 CandidateId:2 LastLogIndex:0 LastLogTerm:0}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.781597</td>  <td class="Candidate">becomes Candidate (currentTerm=5); log=[]</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.781597</td>  <td class="Candidate"></td>  <td class="Candidate">becomes Candidate (currentTerm=5); log=[]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.781597</td>  <td class="Candidate">election timer started (9ms), term=5</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.781597</td>  <td class="Candidate">sending RequestVote to 2: {Term:5 CandidateId:0 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.781597</td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 0: {Term:5 CandidateId:1 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.781597</td>  <td class="Candidate"></td>  <td class="Candidate">election timer started (9ms), term=5</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.781597</td>  <td class="Candidate">sending RequestVote to 1: {Term:5 CandidateId:0 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.781597</td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 2: {Term:5 CandidateId:1 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.782722</td>  <td class="Candidate">RequestVote: {Term:5 CandidateId:1 LastLogIndex:0 LastLogTerm:0} [currentTerm=5, votedFor=0]</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.782722</td>  <td class="Candidate">... RequestVote reply: &{Term:5 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.782722</td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:5 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.783305</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:5 CandidateId:1 LastLogIndex:0 LastLogTerm:0} [currentTerm=5, votedFor=2]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.783305</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:5 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.783305</td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:5 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.783833</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:5 CandidateId:0 LastLogIndex:0 LastLogTerm:0} [currentTerm=5, votedFor=2]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.783833</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:5 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.783833</td>  <td class="Candidate">received RequestVoteReply {Term:5 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.785376</td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:5 CandidateId:0 LastLogIndex:0 LastLogTerm:0} [currentTerm=5, votedFor=1]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.785376</td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:5 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.785376</td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:5 CandidateId:2 LastLogIndex:0 LastLogTerm:0} [currentTerm=5, votedFor=1]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.785376</td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:5 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.785376</td>  <td class="Candidate">received RequestVoteReply {Term:5 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.785890</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:5 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.786420</td>  <td class="Candidate">RequestVote: {Term:5 CandidateId:2 LastLogIndex:0 LastLogTerm:0} [currentTerm=5, votedFor=0]</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.786420</td>  <td class="Candidate">... RequestVote reply: &{Term:5 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.786420</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:5 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.791509</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">becomes Candidate (currentTerm=6); log=[]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.791509</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 0: {Term:6 CandidateId:2 LastLogIndex:0 LastLogTerm:0}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.791509</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 1: {Term:6 CandidateId:2 LastLogIndex:0 LastLogTerm:0}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.791509</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">election timer started (9ms), term=6</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.792120</td>  <td class="Candidate">becomes Candidate (currentTerm=6); log=[]</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.792120</td>  <td class="Candidate"></td>  <td class="Candidate">becomes Candidate (currentTerm=6); log=[]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.792120</td>  <td class="Candidate">election timer started (7ms), term=6</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.792120</td>  <td class="Candidate"></td>  <td class="Candidate">election timer started (6ms), term=6</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.792120</td>  <td class="Candidate">sending RequestVote to 1: {Term:6 CandidateId:0 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.792120</td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 0: {Term:6 CandidateId:1 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.792120</td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 2: {Term:6 CandidateId:1 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.792120</td>  <td class="Candidate">sending RequestVote to 2: {Term:6 CandidateId:0 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.792679</td>  <td class="Candidate">RequestVote: {Term:6 CandidateId:2 LastLogIndex:0 LastLogTerm:0} [currentTerm=6, votedFor=0]</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.792679</td>  <td class="Candidate">... RequestVote reply: &{Term:6 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.792679</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:6 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.793208</td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:6 CandidateId:0 LastLogIndex:0 LastLogTerm:0} [currentTerm=6, votedFor=1]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.793208</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:6 CandidateId:0 LastLogIndex:0 LastLogTerm:0} [currentTerm=6, votedFor=2]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.793208</td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:6 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.793208</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:6 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.793208</td>  <td class="Candidate">received RequestVoteReply {Term:6 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.793208</td>  <td class="Candidate">received RequestVoteReply {Term:6 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.795260</td>  <td class="Candidate">RequestVote: {Term:6 CandidateId:1 LastLogIndex:0 LastLogTerm:0} [currentTerm=6, votedFor=0]</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.795260</td>  <td class="Candidate">... RequestVote reply: &{Term:6 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.795260</td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:6 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.796302</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:6 CandidateId:1 LastLogIndex:0 LastLogTerm:0} [currentTerm=6, votedFor=2]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.796302</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:6 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.796302</td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:6 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.796823</td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:6 CandidateId:2 LastLogIndex:0 LastLogTerm:0} [currentTerm=6, votedFor=1]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.796823</td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:6 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.796823</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:6 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.801870</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">becomes Candidate (currentTerm=7); log=[]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.801870</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">election timer started (9ms), term=7</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.801870</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 0: {Term:7 CandidateId:2 LastLogIndex:0 LastLogTerm:0}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.801870</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 1: {Term:7 CandidateId:2 LastLogIndex:0 LastLogTerm:0}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.802476</td>  <td class="Candidate">becomes Candidate (currentTerm=7); log=[]</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.802476</td>  <td class="Candidate"></td>  <td class="Candidate">becomes Candidate (currentTerm=7); log=[]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.802476</td>  <td class="Candidate">sending RequestVote to 1: {Term:7 CandidateId:0 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.802476</td>  <td class="Candidate">sending RequestVote to 2: {Term:7 CandidateId:0 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.802476</td>  <td class="Candidate"></td>  <td class="Candidate">election timer started (5ms), term=7</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.802476</td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 0: {Term:7 CandidateId:1 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.802476</td>  <td class="Candidate">election timer started (9ms), term=7</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.802476</td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 2: {Term:7 CandidateId:1 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.804562</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:7 CandidateId:1 LastLogIndex:0 LastLogTerm:0} [currentTerm=7, votedFor=2]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.804562</td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:7 CandidateId:0 LastLogIndex:0 LastLogTerm:0} [currentTerm=7, votedFor=1]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.804562</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:7 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.804562</td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:7 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.804562</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:7 CandidateId:0 LastLogIndex:0 LastLogTerm:0} [currentTerm=7, votedFor=2]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.804562</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:7 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.804562</td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:7 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.804562</td>  <td class="Candidate">received RequestVoteReply {Term:7 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.805071</td>  <td class="Candidate">RequestVote: {Term:7 CandidateId:1 LastLogIndex:0 LastLogTerm:0} [currentTerm=7, votedFor=0]</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.805071</td>  <td class="Candidate">... RequestVote reply: &{Term:7 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.805071</td>  <td class="Candidate">received RequestVoteReply {Term:7 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.805071</td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:7 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.806612</td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:7 CandidateId:2 LastLogIndex:0 LastLogTerm:0} [currentTerm=7, votedFor=1]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.806612</td>  <td class="Candidate">RequestVote: {Term:7 CandidateId:2 LastLogIndex:0 LastLogTerm:0} [currentTerm=7, votedFor=0]</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.806612</td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:7 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.806612</td>  <td class="Candidate">... RequestVote reply: &{Term:7 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.806612</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:7 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.806612</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:7 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.812142</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">becomes Candidate (currentTerm=8); log=[]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.812142</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">election timer started (7ms), term=8</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.812142</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 1: {Term:8 CandidateId:2 LastLogIndex:0 LastLogTerm:0}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.812142</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 0: {Term:8 CandidateId:2 LastLogIndex:0 LastLogTerm:0}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.812657</td>  <td class="Candidate">becomes Candidate (currentTerm=8); log=[]</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.812657</td>  <td class="Candidate"></td>  <td class="Candidate">becomes Candidate (currentTerm=8); log=[]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.812657</td>  <td class="Candidate">election timer started (9ms), term=8</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.812657</td>  <td class="Candidate">sending RequestVote to 1: {Term:8 CandidateId:0 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.812657</td>  <td class="Candidate"></td>  <td class="Candidate">election timer started (8ms), term=8</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.812657</td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 0: {Term:8 CandidateId:1 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.812657</td>  <td class="Candidate">sending RequestVote to 2: {Term:8 CandidateId:0 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.812657</td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 2: {Term:8 CandidateId:1 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.814211</td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:8 CandidateId:2 LastLogIndex:0 LastLogTerm:0} [currentTerm=8, votedFor=1]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.814211</td>  <td class="Candidate">RequestVote: {Term:8 CandidateId:2 LastLogIndex:0 LastLogTerm:0} [currentTerm=8, votedFor=0]</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.814211</td>  <td class="Candidate">... RequestVote reply: &{Term:8 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.814211</td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:8 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.814211</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:8 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.814211</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:8 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.816332</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:8 CandidateId:0 LastLogIndex:0 LastLogTerm:0} [currentTerm=8, votedFor=2]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.816332</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:8 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.816332</td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:8 CandidateId:0 LastLogIndex:0 LastLogTerm:0} [currentTerm=8, votedFor=1]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.816332</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:8 CandidateId:1 LastLogIndex:0 LastLogTerm:0} [currentTerm=8, votedFor=2]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.816332</td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:8 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.816332</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:8 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.816332</td>  <td class="Candidate">received RequestVoteReply {Term:8 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.816332</td>  <td class="Candidate">received RequestVoteReply {Term:8 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.816332</td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:8 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.819024</td>  <td class="Candidate">RequestVote: {Term:8 CandidateId:1 LastLogIndex:0 LastLogTerm:0} [currentTerm=8, votedFor=0]</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.819024</td>  <td class="Candidate">... RequestVote reply: &{Term:8 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.819024</td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:8 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.822310</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">becomes Candidate (currentTerm=9); log=[]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.822310</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">election timer started (8ms), term=9</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.822310</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 1: {Term:9 CandidateId:2 LastLogIndex:0 LastLogTerm:0}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.822310</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 0: {Term:9 CandidateId:2 LastLogIndex:0 LastLogTerm:0}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.822839</td>  <td class="Candidate"></td>  <td class="Candidate">becomes Candidate (currentTerm=9); log=[]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.822839</td>  <td class="Candidate">becomes Candidate (currentTerm=9); log=[]</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.822839</td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 2: {Term:9 CandidateId:1 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.822839</td>  <td class="Candidate">sending RequestVote to 1: {Term:9 CandidateId:0 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.822839</td>  <td class="Candidate"></td>  <td class="Candidate">election timer started (8ms), term=9</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.822839</td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 0: {Term:9 CandidateId:1 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.822839</td>  <td class="Candidate">sending RequestVote to 2: {Term:9 CandidateId:0 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.822839</td>  <td class="Candidate">election timer started (8ms), term=9</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.823371</td>  <td class="Candidate">RequestVote: {Term:9 CandidateId:2 LastLogIndex:0 LastLogTerm:0} [currentTerm=9, votedFor=0]</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.823371</td>  <td class="Candidate">... RequestVote reply: &{Term:9 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.823371</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:9 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.825435</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:9 CandidateId:0 LastLogIndex:0 LastLogTerm:0} [currentTerm=9, votedFor=2]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.825435</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:9 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.825435</td>  <td class="Candidate">received RequestVoteReply {Term:9 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.826456</td>  <td class="Candidate">RequestVote: {Term:9 CandidateId:1 LastLogIndex:0 LastLogTerm:0} [currentTerm=9, votedFor=0]</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.826456</td>  <td class="Candidate">... RequestVote reply: &{Term:9 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.826456</td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:9 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.827039</td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:9 CandidateId:0 LastLogIndex:0 LastLogTerm:0} [currentTerm=9, votedFor=1]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.827039</td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:9 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.827039</td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:9 CandidateId:2 LastLogIndex:0 LastLogTerm:0} [currentTerm=9, votedFor=1]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.827039</td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:9 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.827039</td>  <td class="Candidate">received RequestVoteReply {Term:9 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.827572</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:9 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.828103</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:9 CandidateId:1 LastLogIndex:0 LastLogTerm:0} [currentTerm=9, votedFor=2]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.828103</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:9 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.828103</td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:9 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.832844</td>  <td class="Candidate"></td>  <td class="Candidate">becomes Candidate (currentTerm=10); log=[]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.832844</td>  <td class="Candidate">becomes Candidate (currentTerm=10); log=[]</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.832844</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">becomes Candidate (currentTerm=10); log=[]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.832844</td>  <td class="Candidate"></td>  <td class="Candidate">election timer started (8ms), term=10</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.832844</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">election timer started (5ms), term=10</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.832844</td>  <td class="Candidate">election timer started (7ms), term=10</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.832844</td>  <td class="Candidate">sending RequestVote to 1: {Term:10 CandidateId:0 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.832844</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 0: {Term:10 CandidateId:2 LastLogIndex:0 LastLogTerm:0}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.832844</td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 0: {Term:10 CandidateId:1 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.832844</td>  <td class="Candidate">sending RequestVote to 2: {Term:10 CandidateId:0 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.832844</td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 2: {Term:10 CandidateId:1 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.832844</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 1: {Term:10 CandidateId:2 LastLogIndex:0 LastLogTerm:0}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.834940</td>  <td class="Candidate">RequestVote: {Term:10 CandidateId:1 LastLogIndex:0 LastLogTerm:0} [currentTerm=10, votedFor=0]</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.834940</td>  <td class="Candidate">... RequestVote reply: &{Term:10 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.834940</td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:10 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.836477</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:10 CandidateId:1 LastLogIndex:0 LastLogTerm:0} [currentTerm=10, votedFor=2]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.836477</td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:10 CandidateId:2 LastLogIndex:0 LastLogTerm:0} [currentTerm=10, votedFor=1]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.836477</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:10 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.836477</td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:10 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.836477</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:10 CandidateId:0 LastLogIndex:0 LastLogTerm:0} [currentTerm=10, votedFor=2]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.836477</td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:10 CandidateId:0 LastLogIndex:0 LastLogTerm:0} [currentTerm=10, votedFor=1]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.836477</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:10 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.836477</td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:10 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.836477</td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:10 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.836477</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:10 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.836984</td>  <td class="Candidate">received RequestVoteReply {Term:10 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.836984</td>  <td class="Candidate">received RequestVoteReply {Term:10 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.837504</td>  <td class="Candidate">RequestVote: {Term:10 CandidateId:2 LastLogIndex:0 LastLogTerm:0} [currentTerm=10, votedFor=0]</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.837504</td>  <td class="Candidate">... RequestVote reply: &{Term:10 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.837504</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:10 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.843283</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">becomes Candidate (currentTerm=11); log=[]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.843283</td>  <td class="Candidate"></td>  <td class="Candidate">becomes Candidate (currentTerm=11); log=[]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.843283</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 1: {Term:11 CandidateId:2 LastLogIndex:0 LastLogTerm:0}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.843283</td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 2: {Term:11 CandidateId:1 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.843283</td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 0: {Term:11 CandidateId:1 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.843283</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 0: {Term:11 CandidateId:2 LastLogIndex:0 LastLogTerm:0}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.843914</td>  <td class="Candidate">becomes Candidate (currentTerm=11); log=[]</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.843283</td>  <td class="Candidate"></td>  <td class="Candidate">election timer started (6ms), term=11</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.843914</td>  <td class="Candidate">sending RequestVote to 2: {Term:11 CandidateId:0 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.843283</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">election timer started (8ms), term=11</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.843914</td>  <td class="Candidate">sending RequestVote to 1: {Term:11 CandidateId:0 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.843914</td>  <td class="Candidate">election timer started (5ms), term=11</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.845767</td>  <td class="Candidate">RequestVote: {Term:11 CandidateId:1 LastLogIndex:0 LastLogTerm:0} [currentTerm=11, votedFor=0]</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.845767</td>  <td class="Candidate">... RequestVote reply: &{Term:11 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.845767</td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:11 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.846349</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:11 CandidateId:1 LastLogIndex:0 LastLogTerm:0} [currentTerm=11, votedFor=2]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.846349</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:11 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.846349</td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:11 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.847399</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:11 CandidateId:0 LastLogIndex:0 LastLogTerm:0} [currentTerm=11, votedFor=2]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.847399</td>  <td class="Candidate">RequestVote: {Term:11 CandidateId:2 LastLogIndex:0 LastLogTerm:0} [currentTerm=11, votedFor=0]</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.847399</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:11 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.847399</td>  <td class="Candidate">... RequestVote reply: &{Term:11 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.847399</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:11 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.847399</td>  <td class="Candidate">received RequestVoteReply {Term:11 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.848581</td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:11 CandidateId:2 LastLogIndex:0 LastLogTerm:0} [currentTerm=11, votedFor=1]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.848581</td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:11 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.848581</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:11 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.849156</td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:11 CandidateId:0 LastLogIndex:0 LastLogTerm:0} [currentTerm=11, votedFor=1]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.849156</td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:11 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.849717</td>  <td class="Candidate">received RequestVoteReply {Term:11 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.854298</td>  <td class="Candidate">becomes Candidate (currentTerm=12); log=[]</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.854298</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">becomes Candidate (currentTerm=12); log=[]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.854298</td>  <td class="Candidate">sending RequestVote to 2: {Term:12 CandidateId:0 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.854298</td>  <td class="Candidate">sending RequestVote to 1: {Term:12 CandidateId:0 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.854298</td>  <td class="Candidate">election timer started (7ms), term=12</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.854298</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">election timer started (5ms), term=12</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.854298</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 1: {Term:12 CandidateId:2 LastLogIndex:0 LastLogTerm:0}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.854298</td>  <td class="Candidate"></td>  <td class="Candidate">becomes Candidate (currentTerm=12); log=[]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.854298</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 0: {Term:12 CandidateId:2 LastLogIndex:0 LastLogTerm:0}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.854806</td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 2: {Term:12 CandidateId:1 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.854806</td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 0: {Term:12 CandidateId:1 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.854806</td>  <td class="Candidate"></td>  <td class="Candidate">election timer started (8ms), term=12</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.856527</td>  <td class="Candidate">RequestVote: {Term:12 CandidateId:2 LastLogIndex:0 LastLogTerm:0} [currentTerm=12, votedFor=0]</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.856527</td>  <td class="Candidate">... RequestVote reply: &{Term:12 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.856527</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:12 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.857043</td>  <td class="Candidate">RequestVote: {Term:12 CandidateId:1 LastLogIndex:0 LastLogTerm:0} [currentTerm=12, votedFor=0]</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.857043</td>  <td class="Candidate">... RequestVote reply: &{Term:12 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.857043</td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:12 CandidateId:0 LastLogIndex:0 LastLogTerm:0} [currentTerm=12, votedFor=1]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.857043</td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:12 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.857043</td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:12 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.857571</td>  <td class="Candidate">received RequestVoteReply {Term:12 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.858111</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:12 CandidateId:0 LastLogIndex:0 LastLogTerm:0} [currentTerm=12, votedFor=2]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.858111</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:12 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.858111</td>  <td class="Candidate">received RequestVoteReply {Term:12 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.859416</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:12 CandidateId:1 LastLogIndex:0 LastLogTerm:0} [currentTerm=12, votedFor=2]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.859416</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:12 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.859416</td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:12 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.859965</td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:12 CandidateId:2 LastLogIndex:0 LastLogTerm:0} [currentTerm=12, votedFor=1]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.859965</td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:12 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.859965</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:12 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.864513</td>  <td class="Candidate">becomes Candidate (currentTerm=13); log=[]</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.864513</td>  <td class="Candidate">election timer started (7ms), term=13</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.864513</td>  <td class="Candidate">sending RequestVote to 2: {Term:13 CandidateId:0 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.864513</td>  <td class="Candidate">sending RequestVote to 1: {Term:13 CandidateId:0 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.865026</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">becomes Candidate (currentTerm=13); log=[]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.865026</td>  <td class="Candidate"></td>  <td class="Candidate">becomes Candidate (currentTerm=13); log=[]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.865026</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">election timer started (9ms), term=13</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.865026</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 0: {Term:13 CandidateId:2 LastLogIndex:0 LastLogTerm:0}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.865026</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 1: {Term:13 CandidateId:2 LastLogIndex:0 LastLogTerm:0}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.865026</td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 2: {Term:13 CandidateId:1 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.865026</td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 0: {Term:13 CandidateId:1 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.865026</td>  <td class="Candidate"></td>  <td class="Candidate">election timer started (8ms), term=13</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.867577</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:13 CandidateId:0 LastLogIndex:0 LastLogTerm:0} [currentTerm=13, votedFor=2]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.867577</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:13 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.867895</td>  <td class="Candidate">received RequestVoteReply {Term:13 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.868420</td>  <td class="Candidate">RequestVote: {Term:13 CandidateId:2 LastLogIndex:0 LastLogTerm:0} [currentTerm=13, votedFor=0]</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.868420</td>  <td class="Candidate">... RequestVote reply: &{Term:13 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.868420</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:13 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.868958</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:13 CandidateId:1 LastLogIndex:0 LastLogTerm:0} [currentTerm=13, votedFor=2]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.868958</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:13 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.868958</td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:13 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.870544</td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:13 CandidateId:0 LastLogIndex:0 LastLogTerm:0} [currentTerm=13, votedFor=1]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.870544</td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:13 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.870544</td>  <td class="Candidate">received RequestVoteReply {Term:13 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.871153</td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:13 CandidateId:2 LastLogIndex:0 LastLogTerm:0} [currentTerm=13, votedFor=1]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.871153</td>  <td class="Candidate">RequestVote: {Term:13 CandidateId:1 LastLogIndex:0 LastLogTerm:0} [currentTerm=13, votedFor=0]</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.871153</td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:13 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.871153</td>  <td class="Candidate">... RequestVote reply: &{Term:13 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.871153</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:13 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.871153</td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:13 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.874782</td>  <td class="Candidate">becomes Candidate (currentTerm=14); log=[]</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.874782</td>  <td class="Candidate">election timer started (8ms), term=14</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.874782</td>  <td class="Candidate">sending RequestVote to 2: {Term:14 CandidateId:0 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.874782</td>  <td class="Candidate">sending RequestVote to 1: {Term:14 CandidateId:0 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.875296</td>  <td class="Candidate"></td>  <td class="Candidate">becomes Candidate (currentTerm=14); log=[]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.875296</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">becomes Candidate (currentTerm=14); log=[]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.875296</td>  <td class="Candidate"></td>  <td class="Candidate">election timer started (8ms), term=14</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.875296</td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 0: {Term:14 CandidateId:1 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.875296</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">election timer started (8ms), term=14</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.875296</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 0: {Term:14 CandidateId:2 LastLogIndex:0 LastLogTerm:0}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.875296</td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 2: {Term:14 CandidateId:1 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.875296</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 1: {Term:14 CandidateId:2 LastLogIndex:0 LastLogTerm:0}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.876413</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:14 CandidateId:0 LastLogIndex:0 LastLogTerm:0} [currentTerm=14, votedFor=2]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.876413</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:14 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.876413</td>  <td class="Candidate">received RequestVoteReply {Term:14 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.876945</td>  <td class="Candidate">RequestVote: {Term:14 CandidateId:2 LastLogIndex:0 LastLogTerm:0} [currentTerm=14, votedFor=0]</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.876945</td>  <td class="Candidate">... RequestVote reply: &{Term:14 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.876945</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:14 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.877997</td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:14 CandidateId:2 LastLogIndex:0 LastLogTerm:0} [currentTerm=14, votedFor=1]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.877997</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:14 CandidateId:1 LastLogIndex:0 LastLogTerm:0} [currentTerm=14, votedFor=2]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.877997</td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:14 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.877997</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:14 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.878534</td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:14 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.878534</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:14 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.880758</td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:14 CandidateId:0 LastLogIndex:0 LastLogTerm:0} [currentTerm=14, votedFor=1]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.880758</td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:14 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.880758</td>  <td class="Candidate">received RequestVoteReply {Term:14 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.881379</td>  <td class="Candidate">RequestVote: {Term:14 CandidateId:1 LastLogIndex:0 LastLogTerm:0} [currentTerm=14, votedFor=0]</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.881379</td>  <td class="Candidate">... RequestVote reply: &{Term:14 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.881379</td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:14 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.884980</td>  <td class="Candidate">becomes Candidate (currentTerm=15); log=[]</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.884980</td>  <td class="Candidate">election timer started (6ms), term=15</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.884980</td>  <td class="Candidate">sending RequestVote to 1: {Term:15 CandidateId:0 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.884980</td>  <td class="Candidate">sending RequestVote to 2: {Term:15 CandidateId:0 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.885494</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">becomes Candidate (currentTerm=15); log=[]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.885494</td>  <td class="Candidate"></td>  <td class="Candidate">becomes Candidate (currentTerm=15); log=[]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.885494</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 0: {Term:15 CandidateId:2 LastLogIndex:0 LastLogTerm:0}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.885494</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 1: {Term:15 CandidateId:2 LastLogIndex:0 LastLogTerm:0}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.885494</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">election timer started (6ms), term=15</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.885494</td>  <td class="Candidate"></td>  <td class="Candidate">election timer started (6ms), term=15</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.885494</td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 2: {Term:15 CandidateId:1 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.885494</td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 0: {Term:15 CandidateId:1 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.887111</td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:15 CandidateId:0 LastLogIndex:0 LastLogTerm:0} [currentTerm=15, votedFor=1]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.887111</td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:15 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.887111</td>  <td class="Candidate">received RequestVoteReply {Term:15 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.887651</td>  <td class="Candidate">RequestVote: {Term:15 CandidateId:1 LastLogIndex:0 LastLogTerm:0} [currentTerm=15, votedFor=0]</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.887651</td>  <td class="Candidate">... RequestVote reply: &{Term:15 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.887651</td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:15 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.888935</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:15 CandidateId:0 LastLogIndex:0 LastLogTerm:0} [currentTerm=15, votedFor=2]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.888935</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:15 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.888935</td>  <td class="Candidate">RequestVote: {Term:15 CandidateId:2 LastLogIndex:0 LastLogTerm:0} [currentTerm=15, votedFor=0]</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.888935</td>  <td class="Candidate">... RequestVote reply: &{Term:15 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.888935</td>  <td class="Candidate">received RequestVoteReply {Term:15 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.888935</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:15 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.890110</td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:15 CandidateId:2 LastLogIndex:0 LastLogTerm:0} [currentTerm=15, votedFor=1]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.890110</td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:15 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.890110</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:15 CandidateId:1 LastLogIndex:0 LastLogTerm:0} [currentTerm=15, votedFor=2]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.890110</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:15 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.890110</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:15 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.890110</td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:15 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.895211</td>  <td class="Candidate">becomes Candidate (currentTerm=16); log=[]</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.895211</td>  <td class="Candidate">election timer started (6ms), term=16</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.895211</td>  <td class="Candidate">sending RequestVote to 2: {Term:16 CandidateId:0 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.895211</td>  <td class="Candidate">sending RequestVote to 1: {Term:16 CandidateId:0 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.895788</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">becomes Candidate (currentTerm=16); log=[]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.895788</td>  <td class="Candidate"></td>  <td class="Candidate">becomes Candidate (currentTerm=16); log=[]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.905382</td>  <td class="Candidate">becomes Candidate (currentTerm=17); log=[]</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.921803</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 1: {Term:16 CandidateId:2 LastLogIndex:0 LastLogTerm:0}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.921803</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 0: {Term:16 CandidateId:2 LastLogIndex:0 LastLogTerm:0}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.921803</td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 0: {Term:16 CandidateId:1 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.921803</td>  <td class="Candidate"></td>  <td class="Candidate">election timer started (6ms), term=16</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.921803</td>  <td class="Candidate">sending RequestVote to 1: {Term:17 CandidateId:0 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.921803</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">election timer started (8ms), term=16</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.921803</td>  <td class="Candidate"></td>  <td class="Candidate">sending RequestVote to 2: {Term:16 CandidateId:1 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.921803</td>  <td class="Candidate">election timer started (6ms), term=17</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.921803</td>  <td class="Candidate">sending RequestVote to 2: {Term:17 CandidateId:0 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.923892</td>  <td class="Candidate">RequestVote: {Term:16 CandidateId:2 LastLogIndex:0 LastLogTerm:0} [currentTerm=17, votedFor=0]</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.923892</td>  <td class="Candidate">... RequestVote reply: &{Term:17 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.923892</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">received RequestVoteReply {Term:17 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.923892</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Candidate">term out of date in RequestVoteReply</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.924398</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Follower">becomes Follower with term=17; log=[]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.924398</td>  <td class="Candidate"></td>  <td class="Candidate">RequestVote: {Term:16 CandidateId:0 LastLogIndex:0 LastLogTerm:0} [currentTerm=16, votedFor=1]</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.924398</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Follower">RequestVote: {Term:17 CandidateId:0 LastLogIndex:0 LastLogTerm:0} [currentTerm=17, votedFor=-1]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.924398</td>  <td class="Candidate"></td>  <td class="Candidate">... RequestVote reply: &{Term:16 VoteGranted:false}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.924398</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Follower">... RequestVote reply: &{Term:17 VoteGranted:true}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.924398</td>  <td class="Candidate"></td>  <td class="Candidate"></td>  <td class="Follower">election timer started (9ms), term=17</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.924398</td>  <td class="Candidate">received RequestVoteReply {Term:16 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.924398</td>  <td class="Candidate">received RequestVoteReply {Term:17 VoteGranted:true}</td>  <td class="Candidate"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.924942</td>  <td class="Candidate">wins election with 2 votes</td>  <td class="Candidate"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.924942</td>  <td class="Leader">becomes Leader; term=17, log=[]</td>  <td class="Candidate"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.924942</td>  <td class="Leader">sending AppendEntries to 1: ni=0, args={Term:17 LeaderId:0 PrevLogIndex:0 PrevLogTerm:0 Entries:[] LeaderCommit:0}</td>  <td class="Candidate"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.924942</td>  <td class="Leader">sending AppendEntries to 2: ni=0, args={Term:17 LeaderId:0 PrevLogIndex:0 PrevLogTerm:0 Entries:[] LeaderCommit:0}</td>  <td class="Candidate"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.926036</td>  <td class="Leader"></td>  <td class="Candidate">RequestVote: {Term:16 CandidateId:2 LastLogIndex:0 LastLogTerm:0} [currentTerm=16, votedFor=1]</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.926036</td>  <td class="Leader"></td>  <td class="Candidate">... RequestVote reply: &{Term:16 VoteGranted:false}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.926036</td>  <td class="Leader"></td>  <td class="Candidate"></td>  <td class="Follower">received RequestVoteReply {Term:16 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.926036</td>  <td class="Leader"></td>  <td class="Candidate"></td>  <td class="Follower">while waiting for reply, state = Follower</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.926642</td>  <td class="Leader">RequestVote: {Term:16 CandidateId:1 LastLogIndex:0 LastLogTerm:0} [currentTerm=17, votedFor=0]</td>  <td class="Candidate"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.926642</td>  <td class="Leader">... RequestVote reply: &{Term:17 VoteGranted:false}</td>  <td class="Candidate"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.926642</td>  <td class="Leader"></td>  <td class="Candidate">received RequestVoteReply {Term:17 VoteGranted:false}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.926642</td>  <td class="Leader"></td>  <td class="Candidate">term out of date in RequestVoteReply</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.926642</td>  <td class="Leader"></td>  <td class="Follower">becomes Follower with term=17; log=[]</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.927175</td>  <td class="Leader"></td>  <td class="Follower">election timer started (6ms), term=17</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.927710</td>  <td class="Leader"></td>  <td class="Follower"></td>  <td class="Follower">RequestVote: {Term:16 CandidateId:0 LastLogIndex:0 LastLogTerm:0} [currentTerm=17, votedFor=0]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.927710</td>  <td class="Leader"></td>  <td class="Follower">RequestVote: {Term:17 CandidateId:0 LastLogIndex:0 LastLogTerm:0} [currentTerm=17, votedFor=-1]</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.927710</td>  <td class="Leader"></td>  <td class="Follower"></td>  <td class="Follower">... RequestVote reply: &{Term:17 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.927710</td>  <td class="Leader"></td>  <td class="Follower">... RequestVote reply: &{Term:17 VoteGranted:true}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.927710</td>  <td class="Leader"></td>  <td class="Follower"></td>  <td class="Follower">RequestVote: {Term:16 CandidateId:1 LastLogIndex:0 LastLogTerm:0} [currentTerm=17, votedFor=0]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.927710</td>  <td class="Leader"></td>  <td class="Follower"></td>  <td class="Follower">... RequestVote reply: &{Term:17 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.927710</td>  <td class="Leader">received RequestVoteReply {Term:17 VoteGranted:true}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.927710</td>  <td class="Leader">while waiting for reply, state = Leader</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.927710</td>  <td class="Leader">received RequestVoteReply {Term:17 VoteGranted:false}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.927710</td>  <td class="Leader">while waiting for reply, state = Leader</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.928274</td>  <td class="Leader"></td>  <td class="Follower">received RequestVoteReply {Term:17 VoteGranted:false}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.928274</td>  <td class="Leader"></td>  <td class="Follower">while waiting for reply, state = Follower</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.931121</td>  <td class="Leader"></td>  <td class="Follower"></td>  <td class="Follower">AppendEntries: {Term:17 LeaderId:0 PrevLogIndex:0 PrevLogTerm:0 Entries:[] LeaderCommit:0}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.952944</td>  <td class="Leader"></td>  <td class="Follower">AppendEntries: {Term:17 LeaderId:0 PrevLogIndex:0 PrevLogTerm:0 Entries:[] LeaderCommit:0}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.932205</td>  <td class="Leader">in election timer state=Leader, bailing out</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.953811</td>  <td class="Leader"></td>  <td class="Follower"></td>  <td class="Follower">AppendEntries reply: {Term:17 Success:true}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.953811</td>  <td class="Leader"></td>  <td class="Follower">AppendEntries reply: {Term:17 Success:true}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.953811</td>  <td class="Leader"></td>  <td class="Follower">in election timer term changed from 16 to 17, bailing out</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.953811</td>  <td class="Leader"></td>  <td class="Follower"></td>  <td class="Follower">in election timer term changed from 16 to 17, bailing out</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.964773</td>  <td class="Leader"></td>  <td class="Follower"></td>  <td class="Candidate">becomes Candidate (currentTerm=18); log=[]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.964773</td>  <td class="Leader"></td>  <td class="Follower"></td>  <td class="Candidate">election timer started (8ms), term=18</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.964773</td>  <td class="Leader"></td>  <td class="Follower"></td>  <td class="Candidate">sending RequestVote to 1: {Term:18 CandidateId:2 LastLogIndex:0 LastLogTerm:0}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.964773</td>  <td class="Leader"></td>  <td class="Follower"></td>  <td class="Candidate">sending RequestVote to 0: {Term:18 CandidateId:2 LastLogIndex:0 LastLogTerm:0}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.967010</td>  <td class="Leader"></td>  <td class="Follower">RequestVote: {Term:18 CandidateId:2 LastLogIndex:0 LastLogTerm:0} [currentTerm=17, votedFor=0]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.967010</td>  <td class="Leader"></td>  <td class="Follower">... term out of date in RequestVote</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.967010</td>  <td class="Leader"></td>  <td class="Follower">becomes Follower with term=18; log=[]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.967010</td>  <td class="Leader"></td>  <td class="Follower">... RequestVote reply: &{Term:18 VoteGranted:true}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.967010</td>  <td class="Leader"></td>  <td class="Follower">election timer started (6ms), term=18</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.967536</td>  <td class="Leader"></td>  <td class="Follower">in election timer term changed from 17 to 18, bailing out</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.967536</td>  <td class="Leader"></td>  <td class="Follower"></td>  <td class="Candidate">received RequestVoteReply {Term:18 VoteGranted:true}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.967536</td>  <td class="Leader"></td>  <td class="Follower"></td>  <td class="Candidate">wins election with 2 votes</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.967536</td>  <td class="Leader"></td>  <td class="Follower"></td>  <td class="Leader">becomes Leader; term=18, log=[]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.967536</td>  <td class="Leader"></td>  <td class="Follower"></td>  <td class="Leader">sending AppendEntries to 0: ni=0, args={Term:18 LeaderId:2 PrevLogIndex:0 PrevLogTerm:0 Entries:[] LeaderCommit:0}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.967536</td>  <td class="Leader"></td>  <td class="Follower"></td>  <td class="Leader">sending AppendEntries to 1: ni=0, args={Term:18 LeaderId:2 PrevLogIndex:0 PrevLogTerm:0 Entries:[] LeaderCommit:0}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.969876</td>  <td class="Leader"></td>  <td class="Follower">AppendEntries: {Term:18 LeaderId:2 PrevLogIndex:0 PrevLogTerm:0 Entries:[] LeaderCommit:0}</td>  <td class="Leader"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.969876</td>  <td class="Leader"></td>  <td class="Follower">AppendEntries reply: {Term:18 Success:true}</td>  <td class="Leader"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.969876</td>  <td class="Leader">RequestVote: {Term:18 CandidateId:2 LastLogIndex:0 LastLogTerm:0} [currentTerm=17, votedFor=0]</td>  <td class="Follower"></td>  <td class="Leader"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.969876</td>  <td class="Leader">... term out of date in RequestVote</td>  <td class="Follower"></td>  <td class="Leader"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.969876</td>  <td class="Follower">becomes Follower with term=18; log=[]</td>  <td class="Follower"></td>  <td class="Leader"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.969876</td>  <td class="Follower">... RequestVote reply: &{Term:18 VoteGranted:true}</td>  <td class="Follower"></td>  <td class="Leader"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.969876</td>  <td class="Follower">election timer started (8ms), term=18</td>  <td class="Follower"></td>  <td class="Leader"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.969876</td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Leader">received RequestVoteReply {Term:18 VoteGranted:true}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.970391</td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Leader">while waiting for reply, state = Leader</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.972406</td>  <td class="Follower">AppendEntries: {Term:18 LeaderId:2 PrevLogIndex:0 PrevLogTerm:0 Entries:[] LeaderCommit:0}</td>  <td class="Follower"></td>  <td class="Leader"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.972406</td>  <td class="Follower">AppendEntries reply: {Term:18 Success:true}</td>  <td class="Follower"></td>  <td class="Leader"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.974929</td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Leader">in election timer state=Leader, bailing out</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.977529</td>  <td class="Follower"></td>  <td class="Candidate">becomes Candidate (currentTerm=19); log=[]</td>  <td class="Leader"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.977529</td>  <td class="Follower"></td>  <td class="Candidate">sending RequestVote to 0: {Term:19 CandidateId:1 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Leader"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.977529</td>  <td class="Follower"></td>  <td class="Candidate">election timer started (6ms), term=19</td>  <td class="Leader"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.977529</td>  <td class="Follower"></td>  <td class="Candidate">sending RequestVote to 2: {Term:19 CandidateId:1 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Leader"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.980293</td>  <td class="Follower"></td>  <td class="Candidate"></td>  <td class="Leader">RequestVote: {Term:19 CandidateId:1 LastLogIndex:0 LastLogTerm:0} [currentTerm=18, votedFor=2]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.980293</td>  <td class="Follower"></td>  <td class="Candidate"></td>  <td class="Leader">... term out of date in RequestVote</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.980293</td>  <td class="Follower"></td>  <td class="Candidate"></td>  <td class="Follower">becomes Follower with term=19; log=[]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.980293</td>  <td class="Follower"></td>  <td class="Candidate"></td>  <td class="Follower">... RequestVote reply: &{Term:19 VoteGranted:true}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.980293</td>  <td class="Follower"></td>  <td class="Candidate"></td>  <td class="Follower">election timer started (6ms), term=19</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.980293</td>  <td class="Follower"></td>  <td class="Candidate">received RequestVoteReply {Term:19 VoteGranted:true}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.980293</td>  <td class="Follower"></td>  <td class="Candidate">wins election with 2 votes</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.980293</td>  <td class="Follower"></td>  <td class="Leader">becomes Leader; term=19, log=[]</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.980808</td>  <td class="Follower"></td>  <td class="Leader">sending AppendEntries to 2: ni=0, args={Term:19 LeaderId:1 PrevLogIndex:0 PrevLogTerm:0 Entries:[] LeaderCommit:0}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.980808</td>  <td class="Follower"></td>  <td class="Leader">sending AppendEntries to 0: ni=0, args={Term:19 LeaderId:1 PrevLogIndex:0 PrevLogTerm:0 Entries:[] LeaderCommit:0}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.982948</td>  <td class="Follower">RequestVote: {Term:19 CandidateId:1 LastLogIndex:0 LastLogTerm:0} [currentTerm=18, votedFor=2]</td>  <td class="Leader"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.982948</td>  <td class="Follower">... term out of date in RequestVote</td>  <td class="Leader"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.982948</td>  <td class="Follower">becomes Follower with term=19; log=[]</td>  <td class="Leader"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.982948</td>  <td class="Follower">... RequestVote reply: &{Term:19 VoteGranted:true}</td>  <td class="Leader"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.982948</td>  <td class="Follower">election timer started (9ms), term=19</td>  <td class="Leader"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.982948</td>  <td class="Follower"></td>  <td class="Leader">received RequestVoteReply {Term:19 VoteGranted:true}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.982948</td>  <td class="Follower"></td>  <td class="Leader">while waiting for reply, state = Leader</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.983548</td>  <td class="Follower"></td>  <td class="Leader"></td>  <td class="Follower">AppendEntries: {Term:19 LeaderId:1 PrevLogIndex:0 PrevLogTerm:0 Entries:[] LeaderCommit:0}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.983548</td>  <td class="Follower"></td>  <td class="Leader"></td>  <td class="Follower">AppendEntries reply: {Term:19 Success:true}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.984618</td>  <td class="Follower">AppendEntries: {Term:19 LeaderId:1 PrevLogIndex:0 PrevLogTerm:0 Entries:[] LeaderCommit:0}</td>  <td class="Leader"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.984618</td>  <td class="Follower">AppendEntries reply: {Term:19 Success:true}</td>  <td class="Leader"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.987687</td>  <td class="Follower"></td>  <td class="Leader">in election timer state=Leader, bailing out</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.990099</td>  <td class="Follower">in election timer term changed from 18 to 19, bailing out</td>  <td class="Leader"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.990615</td>  <td class="Follower"></td>  <td class="Leader"></td>  <td class="Candidate">becomes Candidate (currentTerm=20); log=[]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.990615</td>  <td class="Follower"></td>  <td class="Leader"></td>  <td class="Candidate">sending RequestVote to 0: {Term:20 CandidateId:2 LastLogIndex:0 LastLogTerm:0}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.990615</td>  <td class="Follower"></td>  <td class="Leader"></td>  <td class="Candidate">election timer started (5ms), term=20</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.990615</td>  <td class="Follower"></td>  <td class="Leader"></td>  <td class="Candidate">sending RequestVote to 1: {Term:20 CandidateId:2 LastLogIndex:0 LastLogTerm:0}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.992709</td>  <td class="Follower"></td>  <td class="Leader">RequestVote: {Term:20 CandidateId:2 LastLogIndex:0 LastLogTerm:0} [currentTerm=19, votedFor=1]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.992709</td>  <td class="Follower"></td>  <td class="Leader">... term out of date in RequestVote</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.992709</td>  <td class="Follower"></td>  <td class="Follower">becomes Follower with term=20; log=[]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.992709</td>  <td class="Follower"></td>  <td class="Follower">... RequestVote reply: &{Term:20 VoteGranted:true}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.992709</td>  <td class="Follower"></td>  <td class="Follower">election timer started (5ms), term=20</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.992709</td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Candidate">received RequestVoteReply {Term:20 VoteGranted:true}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.992709</td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Candidate">wins election with 2 votes</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.992709</td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Leader">becomes Leader; term=20, log=[]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.993241</td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Leader">sending AppendEntries to 1: ni=0, args={Term:20 LeaderId:2 PrevLogIndex:0 PrevLogTerm:0 Entries:[] LeaderCommit:0}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.993241</td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Leader">sending AppendEntries to 0: ni=0, args={Term:20 LeaderId:2 PrevLogIndex:0 PrevLogTerm:0 Entries:[] LeaderCommit:0}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.993773</td>  <td class="Follower">RequestVote: {Term:20 CandidateId:2 LastLogIndex:0 LastLogTerm:0} [currentTerm=19, votedFor=1]</td>  <td class="Follower"></td>  <td class="Leader"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.993773</td>  <td class="Follower">... term out of date in RequestVote</td>  <td class="Follower"></td>  <td class="Leader"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.993773</td>  <td class="Follower">becomes Follower with term=20; log=[]</td>  <td class="Follower"></td>  <td class="Leader"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.993773</td>  <td class="Follower">... RequestVote reply: &{Term:20 VoteGranted:true}</td>  <td class="Follower"></td>  <td class="Leader"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.993773</td>  <td class="Follower">election timer started (9ms), term=20</td>  <td class="Follower"></td>  <td class="Leader"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.993773</td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Leader">received RequestVoteReply {Term:20 VoteGranted:true}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.993773</td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Leader">while waiting for reply, state = Leader</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.996327</td>  <td class="Follower">AppendEntries: {Term:20 LeaderId:2 PrevLogIndex:0 PrevLogTerm:0 Entries:[] LeaderCommit:0}</td>  <td class="Follower"></td>  <td class="Leader"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.996327</td>  <td class="Follower"></td>  <td class="Follower">AppendEntries: {Term:20 LeaderId:2 PrevLogIndex:0 PrevLogTerm:0 Entries:[] LeaderCommit:0}</td>  <td class="Leader"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.996327</td>  <td class="Follower">AppendEntries reply: {Term:20 Success:true}</td>  <td class="Follower"></td>  <td class="Leader"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:34.996327</td>  <td class="Follower"></td>  <td class="Follower">AppendEntries reply: {Term:20 Success:true}</td>  <td class="Leader"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.001145</td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Leader">in election timer state=Leader, bailing out</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.003188</td>  <td class="Follower"></td>  <td class="Candidate">becomes Candidate (currentTerm=21); log=[]</td>  <td class="Leader"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.003188</td>  <td class="Follower">in election timer term changed from 19 to 20, bailing out</td>  <td class="Candidate"></td>  <td class="Leader"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.003188</td>  <td class="Follower"></td>  <td class="Candidate">election timer started (5ms), term=21</td>  <td class="Leader"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.003188</td>  <td class="Follower"></td>  <td class="Candidate">sending RequestVote to 0: {Term:21 CandidateId:1 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Leader"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.003188</td>  <td class="Follower"></td>  <td class="Candidate">sending RequestVote to 2: {Term:21 CandidateId:1 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Leader"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.004431</td>  <td class="Follower"></td>  <td class="Candidate"></td>  <td class="Leader">RequestVote: {Term:21 CandidateId:1 LastLogIndex:0 LastLogTerm:0} [currentTerm=20, votedFor=2]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.004431</td>  <td class="Follower"></td>  <td class="Candidate"></td>  <td class="Leader">... term out of date in RequestVote</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.004431</td>  <td class="Follower"></td>  <td class="Candidate"></td>  <td class="Follower">becomes Follower with term=21; log=[]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.004431</td>  <td class="Follower"></td>  <td class="Candidate"></td>  <td class="Follower">... RequestVote reply: &{Term:21 VoteGranted:true}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.004431</td>  <td class="Follower"></td>  <td class="Candidate"></td>  <td class="Follower">election timer started (9ms), term=21</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.004431</td>  <td class="Follower"></td>  <td class="Candidate">received RequestVoteReply {Term:21 VoteGranted:true}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.004431</td>  <td class="Follower"></td>  <td class="Candidate">wins election with 2 votes</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.004989</td>  <td class="Follower"></td>  <td class="Leader">becomes Leader; term=21, log=[]</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.004989</td>  <td class="Follower"></td>  <td class="Leader">sending AppendEntries to 2: ni=0, args={Term:21 LeaderId:1 PrevLogIndex:0 PrevLogTerm:0 Entries:[] LeaderCommit:0}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.004989</td>  <td class="Follower"></td>  <td class="Leader">sending AppendEntries to 0: ni=0, args={Term:21 LeaderId:1 PrevLogIndex:0 PrevLogTerm:0 Entries:[] LeaderCommit:0}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.007056</td>  <td class="Follower">AppendEntries: {Term:21 LeaderId:1 PrevLogIndex:0 PrevLogTerm:0 Entries:[] LeaderCommit:0}</td>  <td class="Leader"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.007056</td>  <td class="Follower">... term out of date in AppendEntries</td>  <td class="Leader"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.007056</td>  <td class="Follower">becomes Follower with term=21; log=[]</td>  <td class="Leader"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.007056</td>  <td class="Follower">AppendEntries reply: {Term:21 Success:true}</td>  <td class="Leader"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.007056</td>  <td class="Follower">election timer started (8ms), term=21</td>  <td class="Leader"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.008708</td>  <td class="Follower">RequestVote: {Term:21 CandidateId:1 LastLogIndex:0 LastLogTerm:0} [currentTerm=21, votedFor=-1]</td>  <td class="Leader"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.008708</td>  <td class="Follower">... RequestVote reply: &{Term:21 VoteGranted:true}</td>  <td class="Leader"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.009217</td>  <td class="Follower"></td>  <td class="Leader">received RequestVoteReply {Term:21 VoteGranted:true}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.009217</td>  <td class="Follower"></td>  <td class="Leader">while waiting for reply, state = Leader</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.010304</td>  <td class="Follower"></td>  <td class="Leader"></td>  <td class="Follower">AppendEntries: {Term:21 LeaderId:1 PrevLogIndex:0 PrevLogTerm:0 Entries:[] LeaderCommit:0}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.010304</td>  <td class="Follower"></td>  <td class="Leader"></td>  <td class="Follower">AppendEntries reply: {Term:21 Success:true}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.013499</td>  <td class="Follower"></td>  <td class="Leader">in election timer state=Leader, bailing out</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.014131</td>  <td class="Follower">in election timer term changed from 20 to 21, bailing out</td>  <td class="Leader"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.017289</td>  <td class="Candidate">becomes Candidate (currentTerm=22); log=[]</td>  <td class="Leader"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.017289</td>  <td class="Candidate">sending RequestVote to 1: {Term:22 CandidateId:0 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Leader"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.017289</td>  <td class="Candidate">sending RequestVote to 2: {Term:22 CandidateId:0 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Leader"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.017289</td>  <td class="Candidate">election timer started (9ms), term=22</td>  <td class="Leader"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.019675</td>  <td class="Candidate"></td>  <td class="Leader"></td>  <td class="Follower">RequestVote: {Term:22 CandidateId:0 LastLogIndex:0 LastLogTerm:0} [currentTerm=21, votedFor=1]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.019675</td>  <td class="Candidate"></td>  <td class="Leader"></td>  <td class="Follower">... term out of date in RequestVote</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.019675</td>  <td class="Candidate"></td>  <td class="Leader"></td>  <td class="Follower">becomes Follower with term=22; log=[]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.019675</td>  <td class="Candidate"></td>  <td class="Leader"></td>  <td class="Follower">... RequestVote reply: &{Term:22 VoteGranted:true}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.019675</td>  <td class="Candidate"></td>  <td class="Leader"></td>  <td class="Follower">election timer started (6ms), term=22</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.019675</td>  <td class="Candidate">received RequestVoteReply {Term:22 VoteGranted:true}</td>  <td class="Leader"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.019675</td>  <td class="Candidate">wins election with 2 votes</td>  <td class="Leader"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.019675</td>  <td class="Leader">becomes Leader; term=22, log=[]</td>  <td class="Leader"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.020440</td>  <td class="Leader"></td>  <td class="Leader">RequestVote: {Term:22 CandidateId:0 LastLogIndex:0 LastLogTerm:0} [currentTerm=21, votedFor=1]</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.020440</td>  <td class="Leader"></td>  <td class="Leader">... term out of date in RequestVote</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.020440</td>  <td class="Leader"></td>  <td class="Follower">becomes Follower with term=22; log=[]</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.020440</td>  <td class="Leader"></td>  <td class="Follower">... RequestVote reply: &{Term:22 VoteGranted:true}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.020440</td>  <td class="Leader">sending AppendEntries to 1: ni=0, args={Term:22 LeaderId:0 PrevLogIndex:0 PrevLogTerm:0 Entries:[] LeaderCommit:0}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.020440</td>  <td class="Leader"></td>  <td class="Follower">election timer started (5ms), term=22</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.020440</td>  <td class="Leader">sending AppendEntries to 2: ni=0, args={Term:22 LeaderId:0 PrevLogIndex:0 PrevLogTerm:0 Entries:[] LeaderCommit:0}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.020972</td>  <td class="Leader">received RequestVoteReply {Term:22 VoteGranted:true}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.020972</td>  <td class="Leader">while waiting for reply, state = Leader</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.022548</td>  <td class="Leader"></td>  <td class="Follower"></td>  <td class="Follower">AppendEntries: {Term:22 LeaderId:0 PrevLogIndex:0 PrevLogTerm:0 Entries:[] LeaderCommit:0}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.022548</td>  <td class="Leader"></td>  <td class="Follower">AppendEntries: {Term:22 LeaderId:0 PrevLogIndex:0 PrevLogTerm:0 Entries:[] LeaderCommit:0}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.022548</td>  <td class="Leader"></td>  <td class="Follower"></td>  <td class="Follower">AppendEntries reply: {Term:22 Success:true}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.022548</td>  <td class="Leader"></td>  <td class="Follower">AppendEntries reply: {Term:22 Success:true}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.024595</td>  <td class="Leader"></td>  <td class="Follower"></td>  <td class="Follower">in election timer term changed from 21 to 22, bailing out</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.027699</td>  <td class="Leader">in election timer state=Leader, bailing out</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.029865</td>  <td class="Leader"></td>  <td class="Follower"></td>  <td class="Candidate">becomes Candidate (currentTerm=23); log=[]</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.029865</td>  <td class="Leader"></td>  <td class="Follower"></td>  <td class="Candidate">sending RequestVote to 1: {Term:23 CandidateId:2 LastLogIndex:0 LastLogTerm:0}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.029865</td>  <td class="Leader"></td>  <td class="Follower"></td>  <td class="Candidate">election timer started (8ms), term=23</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.029865</td>  <td class="Leader"></td>  <td class="Follower"></td>  <td class="Candidate">sending RequestVote to 0: {Term:23 CandidateId:2 LastLogIndex:0 LastLogTerm:0}</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.030594</td>  <td class="Leader"></td>  <td class="Candidate">becomes Candidate (currentTerm=23); log=[]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.030594</td>  <td class="Leader"></td>  <td class="Candidate">sending RequestVote to 0: {Term:23 CandidateId:1 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.030594</td>  <td class="Leader"></td>  <td class="Candidate">sending RequestVote to 2: {Term:23 CandidateId:1 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.030594</td>  <td class="Leader"></td>  <td class="Candidate">election timer started (6ms), term=23</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.031212</td>  <td class="Dead">becomes Dead</td>  <td class="Candidate"></td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.034762</td>  <td class="Dead"></td>  <td class="Candidate">RequestVote: {Term:23 CandidateId:2 LastLogIndex:0 LastLogTerm:0} [currentTerm=23, votedFor=1]</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.034762</td>  <td class="Dead"></td>  <td class="Candidate">... RequestVote reply: &{Term:23 VoteGranted:false}</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.035819</td>  <td class="Dead"></td>  <td class="Dead">becomes Dead</td>  <td class="Candidate"></td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.036383</td>  <td class="Dead"></td>  <td class="Dead"></td>  <td class="Dead">becomes Dead</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.039930</td>  <td class="Dead"></td>  <td class="Dead"></td>  <td class="Dead">in election timer state=Dead, bailing out</td>
+    </tr>
+    
+    <tr>
+      <td>02:18:35.040999</td>  <td class="Dead"></td>  <td class="Dead">in election timer state=Dead, bailing out</td>  <td class="Dead"></td>
+    </tr>
+    
+  </table>
+</body>
+</html>
