@@ -89,7 +89,7 @@ func (lb *LoadBalancerClient) Get(bucket string, key int) ([]byte, error) {
 }
 
 func (lb *LoadBalancerClient) SetMultipleData() {
-	for i := 11; i <= 20; i++ {
+	for i := 1; i <= 10; i++ {
 		data := fmt.Sprintf(`{"ID":%d,"UUID":"uuid_%d","Email":"user%d@example.com"}`, i, i, i)
 		log.Printf("Client sending Set request - Bucket: user, Key: %d", i)
 
@@ -107,6 +107,29 @@ func (lb *LoadBalancerClient) SetMultipleData() {
 	}
 }
 
+func (lb *LoadBalancerClient) GetMultipleData() {
+	for i := 1; i <= 10; i++ {
+		log.Printf("Client sending Get request - Bucket: user, Key: %d", i)
+
+		req := &GetRequest{Bucket: "user", Key: i}
+		reply := &GetReply{}
+		err := lb.client.Call("LoadBalancer.Get", req, reply)
+
+		if err != nil {
+			log.Printf("Client failed to get data for Key %d: %v", i, err)
+			continue
+		}
+
+		if reply.Success {
+			log.Printf("Client received response for Key %d: %s", i, string(reply.Data))
+		} else {
+			log.Printf("Client received error for Key %d: %v", i, reply.Err)
+		}
+
+		time.Sleep(time.Millisecond * 500)
+	}
+}
+
 func main() {
 	// Kết nối với LoadBalancer
 	lbClient, err := NewLoadBalancerClient("localhost:9000")
@@ -115,6 +138,9 @@ func main() {
 	}
 	defer lbClient.client.Close()
 
-	// Gửi 10 request Set
-	lbClient.SetMultipleData()
+	// Uncomment to set 10 new data entries
+	//lbClient.SetMultipleData()
+
+	// Uncomment to get 10 data entries
+	lbClient.GetMultipleData()
 }

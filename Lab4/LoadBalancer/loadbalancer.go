@@ -2,8 +2,6 @@ package main
 
 import (
 	"fmt"
-	"github.com/buraksezer/consistent"
-	"github.com/cespare/xxhash/v2"
 	"log"
 	"net"
 	"net/http"
@@ -65,50 +63,28 @@ type GetInfoReply struct {
 	Err     error
 }
 
-// ==== ServerNode (cần để triển khai consistent.Member) ====
-type ServerNode struct {
-	Address string
-}
-
-// Cung cấp phương thức String() để ServerNode phù hợp với consistent.Member
-func (s ServerNode) String() string {
-	return s.Address
-}
-
 // ==== LoadBalancer ====
 type LoadBalancer struct {
-	hashRing *consistent.Consistent
+	hashRing *Map
 	servers  map[string]*rpc.Client
-	mutex    sync.RWMutex
+	//nodes    []string
+	mutex sync.RWMutex
 }
 
 // ==== Khởi tạo LoadBalancer ====
 func NewLoadBalancer() *LoadBalancer {
-	cfg := consistent.Config{
-		Hasher:            hasher{},
-		PartitionCount:    71,
-		ReplicationFactor: 3,
-		Load:              1.25,
-	}
 	return &LoadBalancer{
-		hashRing: consistent.New(nil, cfg),
+		hashRing: NewConsistentHash(10, nil),
 		servers:  make(map[string]*rpc.Client),
+		//nodes:    []string{},
 	}
 }
 
-// ==== Custom Hasher ====
-type hasher struct{}
-
-func (h hasher) Sum64(data []byte) uint64 {
-	return xxhash.Sum64(data)
-}
-
-// ==== Server tự động đăng ký vào LoadBalancer ====
+// ==== Đăng ký Server mới ====
 func (lb *LoadBalancer) RegisterServer(req *RegisterServerRequest, reply *RegisterServerReply) error {
 	lb.mutex.Lock()
 	defer lb.mutex.Unlock()
 
-	// Kiểm tra nếu server đã tồn tại
 	if _, exists := lb.servers[req.Address]; exists {
 		reply.Success = false
 		reply.Message = fmt.Sprintf("Server %s is already registered", req.Address)
@@ -116,7 +92,6 @@ func (lb *LoadBalancer) RegisterServer(req *RegisterServerRequest, reply *Regist
 		return nil
 	}
 
-	// Kết nối đến server mới
 	client, err := rpc.DialHTTP("tcp", req.Address)
 	if err != nil {
 		reply.Success = false
@@ -125,85 +100,65 @@ func (lb *LoadBalancer) RegisterServer(req *RegisterServerRequest, reply *Regist
 		return err
 	}
 
-	// Thêm server vào LoadBalancer
-	node := ServerNode{Address: req.Address}
-	lb.hashRing.Add(node)
+	// Thêm vào hash ring
+	lb.hashRing.Add(req.Address)
 	lb.servers[req.Address] = client
+
 	reply.Success = true
 	reply.Message = fmt.Sprintf("Added server: %s", req.Address)
 
-	// Log server mới đã đăng ký
-	log.Printf("New server registered: %s", req.Address)
+	log.Printf("NewConsistentHash server registered: %s", req.Address)
 	log.Println("Current servers in LoadBalancer:")
-	for addr := range lb.servers {
+	for addr, _ := range lb.servers {
 		log.Printf("   - %s", addr)
 	}
-	lb.rebalanceData(node)
 
+	// Thực hiện rebalance dữ liệu
+	lb.rebalanceData(req.Address)
 	log.Println("--------------------------------")
-
 	return nil
 }
 
-// ==== Tìm server kế tiếp trên vòng băm và chuyển dữ liệu sang server mới ====
-func (lb *LoadBalancer) rebalanceData(newNode ServerNode) {
-	log.Printf("Rebalancing data for new server: %s", newNode.Address)
+// ==== Rebalance Data ====
+func (lb *LoadBalancer) rebalanceData(newServerAddr string) {
+	log.Printf("Rebalancing data for new server: %s", newServerAddr)
 
-	// Lấy danh sách tất cả các server trên vòng băm
-	members := lb.hashRing.GetMembers()
-	if len(members) < 2 {
+	// Nếu chỉ có 1 node, không cần rebalance
+	if len(lb.servers) < 2 {
 		log.Printf("Not enough servers for rebalancing")
 		return
 	}
 
-	// Tìm vị trí của server mới trong danh sách
-	var newServerIndex int
-	for i, member := range members {
-		if member.String() == newNode.Address {
-			newServerIndex = i
-			break
-		}
-	}
-
-	// Xác định server kế tiếp (theo vòng tròn)
-	nextServerIndex := (newServerIndex + 1) % len(members)
-	nextServerAddr := members[nextServerIndex].String()
+	// Tìm node đứng liền sau trong vòng băm
+	nextServerAddr := lb.hashRing.Get(newServerAddr)
 
 	log.Printf("Data will be moved from next server: %s", nextServerAddr)
 
-	// Kiểm tra nếu server kế tiếp có trong danh sách kết nối của LoadBalancer
+	// Kiểm tra kết nối
 	nextServer, exists := lb.servers[nextServerAddr]
 	if !exists {
-		log.Printf("Next server %s is not connected, skipping data migration", nextServerAddr)
+		log.Printf("next server %s is not connected, skipping migration", nextServerAddr)
 		return
 	}
 
-	// Lấy tất cả dữ liệu từ server kế tiếp
+	// Lấy toàn bộ dữ liệu từ node sau
 	getAllReq := &GetAllRequest{Bucket: "user"}
 	getAllReply := &GetAllReply{}
 	err := nextServer.Call("Service.GetAll", getAllReq, getAllReply)
 	if err != nil {
-		log.Printf("Failed to get data from next server %s: %v (possibly empty database)", nextServerAddr, err)
+		log.Printf("Failed to get data from %s: %v", nextServerAddr, err)
 		return
 	}
 
-	// Kiểm tra nếu server kế tiếp có dữ liệu hay không
-	if len(getAllReply.Data) == 0 {
-		log.Printf("Next server %s has no data, no migration needed", nextServerAddr)
-		return
-	}
-
-	// Kiểm tra key nào cần chuyển sang server mới
+	// Di chuyển dữ liệu sang node mới
 	for key, value := range getAllReply.Data {
 		newServer, _ := lb.GetServerForKey(fmt.Sprintf("user_%d", key))
-		if newServer == newNode.Address {
-			// Nếu key thuộc về server mới, gửi dữ liệu từ server kế tiếp sang server mới
-			lb.migrateData(newNode.Address, nextServerAddr, key, value)
+		if newServer == newServerAddr {
+			lb.migrateData(newServerAddr, nextServerAddr, key, value)
 		}
 	}
 }
 
-// ==== Chuyển dữ liệu từ server cũ sang server mới và xóa dữ liệu cũ ====
 func (lb *LoadBalancer) migrateData(newServerAddr string, oldServerAddr string, key int, data []byte) {
 	log.Printf("Migrating key %d to new server %s", key, newServerAddr)
 
@@ -234,60 +189,65 @@ func (lb *LoadBalancer) migrateData(newServerAddr string, oldServerAddr string, 
 	}
 }
 
-// ==== Xóa server khỏi LoadBalancer ====
+// ==== Xóa Server ====
 func (lb *LoadBalancer) RemoveServer(address string) {
 	lb.mutex.Lock()
 	defer lb.mutex.Unlock()
 
-	lb.hashRing.Remove(address)
-
-	if client, exists := lb.servers[address]; exists {
-		client.Close()
-		delete(lb.servers, address)
-		log.Printf("Removed server: %s", address)
-
-		// Log danh sách server sau khi xóa
-		log.Println("Current servers after removal:")
-		for addr := range lb.servers {
-			log.Printf("   - %s", addr)
-		}
-		log.Println("--------------------------------")
+	// Kiểm tra server có tồn tại không
+	if _, exists := lb.servers[address]; !exists {
+		log.Printf("Server %s not found, skipping removal", address)
+		return
 	}
+	err := lb.servers[address].Close()
+	if err != nil {
+		return
+	}
+	// Xóa khỏi danh sách servers
+	delete(lb.servers, address)
+
+	// Cập nhật danh sách nodes
+	lb.hashRing = NewConsistentHash(10, nil)
+
+	for nodeAddress, _ := range lb.servers {
+		if address != nodeAddress {
+			lb.hashRing.Add(nodeAddress)
+		}
+	}
+
+	log.Printf("Removed server: %s", address)
 }
 
-// ==== Lấy server phù hợp cho key ====
+// ==== Lấy Server theo key ====
 func (lb *LoadBalancer) GetServerForKey(key string) (string, error) {
-	log.Printf("GetServerForKey: %s", key)
-	members := lb.hashRing.GetMembers()
-	if len(members) == 0 {
-		log.Printf("Hash ring is empty! No servers available.")
-		return "", fmt.Errorf("no available servers")
-	}
 	//lb.mutex.RLock()
 	//defer lb.mutex.RUnlock()
 
-	node := lb.hashRing.LocateKey([]byte(key))
-
-	if node == nil {
-		log.Printf("LocateKey() failed for key: %s", key)
-		return "", fmt.Errorf("failed to locate server for key: %s", key)
+	server := lb.hashRing.Get(key)
+	if server == "" {
+		return "", fmt.Errorf("no available servers")
 	}
-
-	return node.String(), nil
+	log.Printf("%s will be moved/stayed at %s", key, server)
+	return server, nil
 }
 
-// ==== Chuyển tiếp request Set ====
+// ==== Set Request ====
 func (lb *LoadBalancer) Set(req *SetRequest, reply *SetReply) error {
 	log.Printf("LoadBalancer received Set request for key: %d, bucket: %s", req.Key, req.Bucket)
 
-	server, err := lb.GetServerForKey(fmt.Sprintf("%s:%d", req.Bucket, req.Key))
+	server, err := lb.GetServerForKey(fmt.Sprintf("%s_%d", req.Bucket, req.Key))
 	if err != nil {
-		log.Printf("No server found for key: %d", req.Key)
+		log.Printf("No server found for key: %d, error: %v", req.Key, err)
 		return err
 	}
 	log.Printf("LoadBalancer selected server %s for key %d", server, req.Key)
 
-	client := lb.servers[server]
+	client, exists := lb.servers[server]
+	if !exists {
+		log.Printf("Server %s not found in lb.servers map", server)
+		return fmt.Errorf("server %s not found", server)
+	}
+
 	err = client.Call("Service.Set", req, reply)
 	if err != nil {
 		log.Printf("Failed to forward Set request to server %s: %v", server, err)
@@ -298,66 +258,48 @@ func (lb *LoadBalancer) Set(req *SetRequest, reply *SetReply) error {
 	return nil
 }
 
-// ==== Chuyển tiếp request Get ====
+// ==== Get Request ====
 func (lb *LoadBalancer) Get(req *GetRequest, reply *GetReply) error {
-	server, err := lb.GetServerForKey(fmt.Sprintf("%s:%d", req.Bucket, req.Key))
+	log.Printf("LoadBalancer received Get request for key: %d, bucket: %s", req.Key, req.Bucket)
+
+	// Tìm server thích hợp bằng consistent hashing
+	server, err := lb.GetServerForKey(fmt.Sprintf("%s_%d", req.Bucket, req.Key))
 	if err != nil {
+		log.Printf("No server found for key: %d, error: %v", req.Key, err)
 		return err
 	}
-	client := lb.servers[server]
-	return client.Call("Service.Get", req, reply)
-}
+	log.Printf("LoadBalancer selected server %s for key %d", server, req.Key)
 
-// ==== Chuyển tiếp request Delete ====
-func (lb *LoadBalancer) Delete(req *DeleteRequest, reply *DeleteReply) error {
-	server, err := lb.GetServerForKey(fmt.Sprintf("%s:%d", req.Bucket, req.Key))
+	// Kiểm tra server có tồn tại không
+	client, exists := lb.servers[server]
+	if !exists {
+		log.Printf("Server %s not found in lb.servers map", server)
+		return fmt.Errorf("server %s not found", server)
+	}
+
+	// Gửi request Get tới server node
+	err = client.Call("Service.Get", req, reply)
 	if err != nil {
+		log.Printf("Failed to forward Get request to server %s: %v", server, err)
 		return err
 	}
-	client := lb.servers[server]
-	return client.Call("Service.Delete", req, reply)
-}
 
-// ==== Chuyển tiếp request GetAll ====
-func (lb *LoadBalancer) GetAll(req *GetAllRequest, reply *GetAllReply) error {
-	server, err := lb.GetServerForKey(req.Bucket)
-	if err != nil {
-		return err
+	// Log kết quả từ server
+	if reply.Success {
+		log.Printf("LoadBalancer received response from server %s: Key %d found", server, req.Key)
+	} else {
+		log.Printf("LoadBalancer received response from server %s: Key %d not found", server, req.Key)
 	}
-	client := lb.servers[server]
-	return client.Call("Service.GetAll", req, reply)
-}
 
-// ==== Chuyển tiếp request GetInfo ====
-func (lb *LoadBalancer) GetInfo(req *GetInfoRequest, reply *GetInfoReply) error {
-	lb.mutex.Lock()
-	defer lb.mutex.Unlock()
-
-	for _, client := range lb.servers {
-		err := client.Call("Service.GetInfo", req, reply)
-		if err == nil {
-			return nil
-		}
-	}
-	return fmt.Errorf("no available servers")
+	return nil
 }
 
 // ==== Chạy LoadBalancer ====
 func main() {
 	lb := NewLoadBalancer()
-	err := rpc.Register(lb)
-	if err != nil {
-		log.Fatal("Failed to register LoadBalancer:", err)
-	}
+	rpc.Register(lb)
 	rpc.HandleHTTP()
-
-	listener, err := net.Listen("tcp", ":9000")
-	if err != nil {
-		log.Fatal("Listen error:", err)
-	}
+	listener, _ := net.Listen("tcp", ":9000")
 	log.Println("LoadBalancer listening on port 9000...")
-	err = http.Serve(listener, nil)
-	if err != nil {
-		log.Fatal("HTTP serve error:", err)
-	}
+	http.Serve(listener, nil)
 }

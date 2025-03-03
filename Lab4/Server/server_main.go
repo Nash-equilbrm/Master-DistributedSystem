@@ -88,13 +88,17 @@ type GetInfoReply struct {
 
 // ==== Các phương thức RPC ====
 func (s *Service) Get(req *GetRequest, reply *GetReply) error {
+	log.Printf("Server received Get request - Bucket: %s, Key: %d", req.Bucket, req.Key)
+
 	data, ok := s.db.Get(req.Bucket, req.Key)
 	if ok {
 		reply.Success = true
 		reply.Data = data
+		log.Printf("Server found data for Key %d: %s", req.Key, string(data))
 	} else {
 		reply.Success = false
 		reply.Err = fmt.Errorf("key not found")
+		log.Printf("Server could not find Key %d", req.Key)
 	}
 	return nil
 }
