@@ -2,7 +2,9 @@ package main
 
 import (
 	"fmt"
+	"github.com/google/uuid"
 	"log"
+	"math/rand"
 	"net/rpc"
 	"time"
 )
@@ -44,6 +46,15 @@ type GetAllReply struct {
 	Success bool
 	Data    map[int][]byte
 	Err     error
+}
+
+type RemoveServerRequest struct {
+	Address string
+}
+
+type RemoveServerReply struct {
+	Success bool
+	Message string
 }
 
 // LoadBalancerClient giúp giao tiếp với LoadBalancer
@@ -88,12 +99,22 @@ func (lb *LoadBalancerClient) Get(bucket string, key int) ([]byte, error) {
 	return reply.Data, nil
 }
 
-func (lb *LoadBalancerClient) SetMultipleData() {
+func (lb *LoadBalancerClient) SetMultipleData(randomId bool) {
+
 	for i := 1; i <= 10; i++ {
-		data := fmt.Sprintf(`{"ID":%d,"UUID":"uuid_%d","Email":"user%d@example.com"}`, i, i, i)
+		var id int
+		if randomId {
+			id = rand.Intn(1000) + 1 // ID từ 1 đến 1000
+		} else {
+			id = i
+		}
+		uuidStr := uuid.New().String()
+		email := fmt.Sprintf("user%d_%d@example.com", id, id)
+
+		data := fmt.Sprintf(`{"ID":%d,"UUID":"%s","Email":"%s"}`, id, uuidStr, email)
 		log.Printf("Client sending Set request - Bucket: user, Key: %d", i)
 
-		req := &SetRequest{Bucket: "user", Key: i, Data: []byte(data)}
+		req := &SetRequest{Bucket: "user", Key: id, Data: []byte(data)}
 		reply := &SetReply{}
 		err := lb.client.Call("LoadBalancer.Set", req, reply)
 
@@ -103,7 +124,9 @@ func (lb *LoadBalancerClient) SetMultipleData() {
 		}
 
 		log.Printf("Client received response for Key %d: Success = %v", i, reply.Success)
-		time.Sleep(time.Millisecond * 500) // Giãn cách để dễ theo dõi log
+
+		// Random sleep từ 200ms đến 800ms để mô phỏng request không đồng đều
+		time.Sleep(time.Duration(rand.Intn(600)+200) * time.Millisecond)
 	}
 }
 
@@ -130,6 +153,23 @@ func (lb *LoadBalancerClient) GetMultipleData() {
 	}
 }
 
+// RemoveServer yêu cầu LoadBalancer loại bỏ một server
+func (lb *LoadBalancerClient) RemoveServer(serverID string) error {
+	log.Printf("Client sending RemoveServer request - ServerID: %s", serverID)
+
+	req := &RemoveServerRequest{Address: serverID}
+	reply := &RemoveServerReply{}
+	err := lb.client.Call("LoadBalancer.RemoveServer", req, reply)
+
+	if err != nil {
+		log.Printf("Client failed to send RemoveServer request: %v", err)
+		return err
+	}
+
+	log.Printf("Client received response: Success = %v", reply.Success)
+	return nil
+}
+
 func main() {
 	// Kết nối với LoadBalancer
 	lbClient, err := NewLoadBalancerClient("localhost:9000")
@@ -139,8 +179,13 @@ func main() {
 	defer lbClient.client.Close()
 
 	// Uncomment to set 10 new data entries
-	//lbClient.SetMultipleData()
+	//lbClient.SetMultipleData(false)
+	//lbClient.SetMultipleData(true)
 
 	// Uncomment to get 10 data entries
-	lbClient.GetMultipleData()
+	//lbClient.GetMultipleData()
+
+	// Uncomment to request remove server
+	serverToRemoveID := "localhost:2"
+	lbClient.RemoveServer(serverToRemoveID)
 }

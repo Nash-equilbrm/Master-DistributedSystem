@@ -18,6 +18,15 @@ type RegisterServerReply struct {
 	Message string
 }
 
+type RemoveServerRequest struct {
+	Address string
+}
+
+type RemoveServerReply struct {
+	Success bool
+	Message string
+}
+
 type GetRequest struct {
 	Bucket string
 	Key    int
@@ -175,47 +184,79 @@ func (lb *LoadBalancer) migrateData(newServerAddr string, oldServerAddr string, 
 	log.Printf("Successfully migrated key %d to server %s", key, newServerAddr)
 
 	// Xóa dữ liệu trên server cũ sau khi di chuyển thành công
-	log.Printf("Deleting key %d from old server %s", key, oldServerAddr)
+	if oldServerAddr != "" {
+		log.Printf("Deleting key %d from old server %s", key, oldServerAddr)
 
-	oldServer := lb.servers[oldServerAddr]
-	delReq := &DeleteRequest{Bucket: "user", Key: key}
-	delReply := &DeleteReply{}
+		oldServer := lb.servers[oldServerAddr]
+		delReq := &DeleteRequest{Bucket: "user", Key: key}
+		delReply := &DeleteReply{}
 
-	err = oldServer.Call("Service.Delete", delReq, delReply)
-	if err != nil || !delReply.Success {
-		log.Printf("Failed to delete key %d from old server %s: %v", key, oldServerAddr, err)
-	} else {
-		log.Printf("Successfully deleted key %d from old server %s", key, oldServerAddr)
-	}
-}
-
-// ==== Xóa Server ====
-func (lb *LoadBalancer) RemoveServer(address string) {
-	lb.mutex.Lock()
-	defer lb.mutex.Unlock()
-
-	// Kiểm tra server có tồn tại không
-	if _, exists := lb.servers[address]; !exists {
-		log.Printf("Server %s not found, skipping removal", address)
-		return
-	}
-	err := lb.servers[address].Close()
-	if err != nil {
-		return
-	}
-	// Xóa khỏi danh sách servers
-	delete(lb.servers, address)
-
-	// Cập nhật danh sách nodes
-	lb.hashRing = NewConsistentHash(10, nil)
-
-	for nodeAddress, _ := range lb.servers {
-		if address != nodeAddress {
-			lb.hashRing.Add(nodeAddress)
+		err = oldServer.Call("Service.Delete", delReq, delReply)
+		if err != nil || !delReply.Success {
+			log.Printf("Failed to delete key %d from old server %s: %v", key, oldServerAddr, err)
+		} else {
+			log.Printf("Successfully deleted key %d from old server %s", key, oldServerAddr)
 		}
 	}
 
+}
+
+// ==== Xóa Server ====
+func (lb *LoadBalancer) RemoveServer(req *RemoveServerRequest, reply *RemoveServerReply) error {
+	lb.mutex.Lock()
+	defer lb.mutex.Unlock()
+
+	address := req.Address
+
+	// Kiểm tra server có tồn tại trong danh sách không
+	if _, exists := lb.servers[address]; !exists {
+		reply.Success = false
+		reply.Message = fmt.Sprintf("Server %s not found, skipping removal", address)
+		log.Printf(reply.Message)
+		return nil
+	}
+
+	// Lấy toàn bộ dữ liệu từ server cần xóa
+	removeThisServer := lb.servers[address]
+	getAllReq := &GetAllRequest{Bucket: "user"}
+	getAllReply := &GetAllReply{}
+	err := removeThisServer.Call("Service.GetAll", getAllReq, getAllReply)
+	if err != nil {
+		reply.Success = false
+		reply.Message = fmt.Sprintf("Failed to get data from %s: %v", address, err)
+		log.Printf(reply.Message)
+		return err
+	}
+
+	// Đóng kết nối RPC với server
+	err = lb.servers[address].Close()
+	if err != nil {
+		log.Printf("Failed to close connection with server %s: %v", address, err)
+	}
+
+	// Xóa server khỏi danh sách servers
+	delete(lb.servers, address)
+
+	// Cập nhật lại vòng băm (consistent hash)
+	lb.hashRing = NewConsistentHash(10, nil)
+
+	// Thêm lại các node còn lại vào vòng băm
+	for nodeAddress := range lb.servers {
+		lb.hashRing.Add(nodeAddress)
+	}
+
+	// Di chuyển dữ liệu sang server mới
+	log.Printf("Rebalancing data after removal of server %s", address)
+	for key, value := range getAllReply.Data {
+		newServer, _ := lb.GetServerForKey(fmt.Sprintf("user_%d", key))
+		lb.migrateData(newServer, "", key, value)
+	}
+
+	reply.Success = true
+	reply.Message = fmt.Sprintf("Removed server: %s", address)
 	log.Printf("Removed server: %s", address)
+
+	return nil
 }
 
 // ==== Lấy Server theo key ====
